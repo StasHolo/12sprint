@@ -1,0 +1,50 @@
+body{
+  background-color: rgb(36, 35, 35);
+}
+.imageBlock img{
+  position: absolute;
+    width: 1606px;
+    clip: rect(3px, 1146px, 662px, 776px);
+    left: -775px;
+}
+.block h3 {
+  margin-top: 233px;
+  color: rgb(211, 211, 211);
+  position: absolute;
+  width: 308px;
+  font-size: 20px;
+  margin-left: -100;
+  left: 117px;
+}
+
+@media (min-width: 768px){
+  
+.block{
+  width: 280px;
+}
+.block h3{
+  margin-top: 100px;
+    color: rgb(211, 211, 211);
+    position: absolute;
+    width: 390px;
+    font-size: 25px;
+    margin-left: -100;
+    left: 292px;
+}
+body{
+  background-color: rgb(36, 35, 35);
+}
+.imageBlock{
+  margin-top: 30px;
+  display: flex;
+  
+  justify-content: center;
+}
+.imageBlock img{
+  position: absolute;
+  
+  width: 1179px;
+  clip: rect(-28px, 1175px, 605px, 115px);
+  left: -85px;
+}
+}

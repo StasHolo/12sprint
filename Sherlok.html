@@ -1,0 +1,45 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="page.css">
+<script>
+  const originalText = 'России не опасен внешний враг, Ее хранят пространства и снега, Но ей опасен внутренний дурак, Усердно сочиняющий врага'
+  let currentText = ''
+  const space = ' '
+  let i=0
+
+  let arrayOfString
+
+  function splitString(stringToSplit, separator){
+    arrayOfString = stringToSplit.split(separator);
+    console.log(arrayOfString.join(' / '));
+    return(arrayOfString);    
+    
+  }
+  splitString(originalText, space)
+  
+setInterval(function() {
+    if (i < arrayOfString.length) {
+        currentText += ' ' + arrayOfString[i];
+        console.log(currentText);
+        document.getElementById('genText').innerHTML = currentText;
+        i++;
+    } else {
+        clearInterval();
+    }
+}, 1000);
+  
+
+
+</script>
+  </head>
+  <body>
+    <div class="imageBlock">
+      <img src="detective.webp">
+      <div class="block">
+      <h3 id="genText"></h3>
+      </div>
+    </div>
+
+  </body>
+</html>
