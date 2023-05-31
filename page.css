@@ -23,13 +23,13 @@ body{
   width: 280px;
 }
 .block h3{
-  margin-top: 100px;
+  margin-top: 174px;
     color: rgb(211, 211, 211);
     position: absolute;
-    width: 390px;
-    font-size: 25px;
+    width: 520px;
+    font-size: 35px;
     margin-left: -100;
-    left: 292px;
+    left: 435px;
 }
 body{
   background-color: rgb(36, 35, 35);
@@ -42,9 +42,9 @@ body{
 }
 .imageBlock img{
   position: absolute;
+  width: 1494px;
   
-  width: 1179px;
-  clip: rect(-28px, 1175px, 605px, 115px);
-  left: -85px;
+  clip: rect(0px, 1485px, 750px, 117px);
+  left: -85;
 }
 }
