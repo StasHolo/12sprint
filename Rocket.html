@@ -1,0 +1,69 @@
+<html>
+  <head>
+<script>
+  
+</script>
+  </head>
+  <body>
+    <button onclick="otschet()">Запуск</button>
+    <h2 id="schet"></h2>
+    <button id="stopBtn" onclick="stop()">Стоп</button>
+    <script>
+      let timer;
+      let timerLocal;
+      const savedSeconds = localStorage.getItem('seconds');
+      if (savedSeconds >0){
+        kolSec = savedSeconds;
+        document.getElementById('schet').innerHTML = localStorage.getItem('seconds');
+        timerLocal = setInterval(function() {
+  if (kolSec === 0) {
+    clearInterval(timerLocal);
+    localStorage.removeItem('seconds');
+  } else {
+    document.getElementById('schet').innerHTML = kolSec;
+    localStorage.setItem('seconds', JSON.stringify(kolSec));
+    kolSec = kolSec - 1;
+  }
+}, 1000);
+    }else {
+    clearInterval(timerLocal);
+  }
+  function otschet(){
+  let lastSec = document.getElementById('schet');
+  const savedSec = localStorage.getItem('seconds');
+  
+  if (savedSec > 0){
+    kolSec = savedSec;
+  } else {
+    kolSec = prompt('Введите кол-во секунд');
+  }
+  
+  if (savedSec === '0') {
+    localStorage.removeItem('seconds');
+  }
+  
+  timer = setInterval(function() {
+    if (kolSec === 0) {
+      clearInterval(timer);
+      localStorage.removeItem('seconds');
+      document.getElementById('schet').innerHTML = 'Поехали!';
+    } else {
+      document.getElementById('schet').innerHTML = kolSec;
+      localStorage.setItem('seconds', JSON.stringify(kolSec));
+      kolSec = kolSec - 1;
+    }
+  }, 1000);
+}
+
+function stop() {
+  clearInterval(timer);
+  clearInterval(timerLocal);
+  //localStorage.setItem('seconds', JSON.stringify(kolSec));
+  //localStorage.setItem('seconds', JSON.stringify(document.getElementById('schet').innerHTML));
+  
+  //localStorage.removeItem('seconds');
+ // document.getElementById('schet').innerHTML = "";
+}
+    </script>
+  </body>
+</html>
